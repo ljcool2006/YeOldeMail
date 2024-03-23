@@ -1,0 +1,60 @@
+body, td{font-family:arial,sans-serif;font-size:80%}
+body {margin-top:0;}
+pre {white-space:pre-wrap;white-space:-moz-pre-wrap;word-wrap:break-word;white-space:-pre-wrap;white-space:-o-pre-wrap;}
+a:link, a:active, a:visited{color:#0000CC}
+img{border:0}
+.p{vertical-align:middle;float:right;}
+.ar{vertical-align:middle;float:right;width:8}
+.lb a:link, .lb a:active, .lb a:visited{font-size:85%}
+.r{padding-top:6px}
+.h{padding:5px 0}
+.ft{margin-top:20px}
+.msg{padding:10px;overflow:hidden}
+.ac img{vertical-align:middle}
+.u{text-decoration:underline}
+.nu{text-decoration:none}
+.n{color:#777777}
+.bn{margin-bottom:6px}
+.hdn{height:1px;width:1px;position:absolute;overflow:hidden;top:-999px;}
+.prf{padding-left:8px;padding-right:8px;zoom:1}
+.prf table{border-top:none;border-collapse:collapse;}
+.prf td{padding:8px;vertical-align:top;border-style:solid;border-width:2px;border-color:#fad163;border-right:none;border-left:none;border-top:none}
+.prf th{padding:8px;vertical-align:top;border-style:solid;border-width:2px;border-color:#fad163;border-right:none;border-left:none;border-top:none;border-bottom:none;font-weight:normal;font-size:80%;text-align:left}
+.prf input{vertical-align:top}
+.prv td{padding:0;border-style:none}
+.prfs{width:100%;border-top:none;border-collapse:collapse;margin-left:0px;margin-right:8px;}
+.prfs td{padding:0px;vertical-align:top;border-style:none;border-width:1px;border-color:#fad163;border-right:none;border-left:none;border-top:none; text-align:left;}
+.prfs th{padding:8px;vertical-align:top;border-style:none;border-width:1px;border-color:#fad163;border-right:none;border-left:none;border-top:none;border-bottom:none;font-weight:normal;font-size:80%;text-align:left}
+.prfs input{vertical-align:top}
+.gr{color:green;font-weight:bold}
+.s{font-size:85%}
+.hp{width:100%}
+.fl{float:left}
+.fr{float:right}
+.ml{margin-left:5px}
+td.lr{padding-top: 16px;border-bottom:none}
+.nav ul{list-style-type:none;padding:0;margin-left:0}
+.nav ul li{float:left;padding:4 10px 4 6px;font-weight:bold;margin:0}
+.nav ul li.on{background:#fff7d7}
+.ctlf{padding-left:3em;text-align:right;vertical-align:top;white-space:nowrap;width:1%;}
+.ctrf{white-space:nowrap}
+textarea {font-size:100%;font-family:arial, sans-serif}
+form{margin:0}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;margin-top:0pt;margin-bottom:0pt;margin-left:0pt;margin-right:0pt;display:inline;}
+h1 b,h2 b,h3 b,h4 b,h5 b,h6 b{font-weight:bold;}
+th.nl{text-align: left; font-size: 80%}
+.dv{background:none;border:none;color:#000000;margin-top:0;margin-right:auto;margin-bottom:0;margin-left:0;padding:0;text-align:left;width:100%;}
+div.space-line{clear:both;margin:0;padding:0;width:auto;}
+div.line{background:none;border-style:solid;border-width:1px;border-color:#fad163;border-right:none;border-left:none;border-top:none; width:100%;}
+div.spacer-line{background:none;border-style:solid;border-width:2px;border-color:#fad163;border-right:none;border-left:none;border-top:none; margin-top:5px; margin-bottom: 5px; width:100%;}
+div.end-container{border:none;float:right;margin:0;padding:0;text-align:right;border-right:none;border-left:none;border-top:none;border-bottom:none;}
+div.end-container-align-begin{border:none;float:right;margin:0;padding:0;text-align:left;border-right:none;border-left:none;border-top:none;border-bottom:none;vertical-align:bottom}
+div.begin-container{border:none;float:left;margin:0;padding:0;border-right:none;border-left:none;border-top:none;border-bottom:none;}
+div.begin-container-align-end{border:none;float:left;margin:0;padding:0;text-align:right;border-right:none;border-left:none;border-top:none;border-bottom:none;}
+div.middle-container{border:none; margin:0;padding:0;text-align:center;border-right:none;border-left:none;border-top:none;border-bottom:none;}
+div.middle-container-padded{border:none;margin:0;padding-left:15px;text-align:left;border-right:none;border-left:none;border-top:none;border-bottom:none;}
+div.begin-container-padded{border:none;margin:0;padding-left:50px;text-align:left;border-right:none;border-left:none;border-top:none;border-bottom:none;}
+div.begin-container-fixed-width{width:325px;border:none;margin:0;float:left;text-align:left;border-right:none;border-left:none;border-top:none;border-bottom:none;}
+div.tb{padding: 5px 8px; float:left; white-space: nowrap}
+div.bg{background:#ffffff none repeat scroll 0% 0%;}
+table.nb td{border:none;margin:0px;padding:1px;}
