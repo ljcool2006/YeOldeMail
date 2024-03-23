@@ -1,0 +1,15 @@
+DirectorySlash Off
+RewriteEngine On
+
+ErrorDocument 404 /errors/404.shtml
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.*)$ $1.php [NC,END]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)\.html$ $1.php [NC,END]
+
+RewriteCond %{QUERY_STRING} "view=page&name=browser&*.*"
+RewriteRule ^mail$ /mail/browser.js [NC,END]
