@@ -44,6 +44,13 @@ function shorten($text, $number, $symbols = '...') {
     return $new;
 
 }
+function randomId() {
+
+    $randomid = base_convert(bin2hex(random_bytes(8)), 16, 36);
+
+    return $randomid;
+
+}
 ?>
 <html lang="en">
 
@@ -157,7 +164,7 @@ function shorten($text, $number, $symbols = '...') {
 
             }
 
-        </style><base href="/maildemo.php"><script type="text/javascript" nonce="fhoi2ywldN-yJ0o1YooxIw">
+        </style><base href="/mail/u/0/h/<?= randomId(); ?>/"><script type="text/javascript" nonce="fhoi2ywldN-yJ0o1YooxIw">
 
             (function () {
 
