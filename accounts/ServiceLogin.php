@@ -217,7 +217,7 @@ function gaia_setFocus() {
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-<title>Welcome to Gmail</title>
+<title>Welcome to Ye Olde Mail</title>
 
 <style type=text/css>
 <!--
@@ -402,7 +402,7 @@ function format(num) {
 
 <table width=95% border=0 align=center cellpadding=0 cellspacing=0>
   <tr valign=top>
-    <td width=1%><img src=/mail/help/images/logo.gif border=0 width=143 height=59 alt=Gmail align=left vspace=10/></td>
+    <td width=1%><img src=/mail/help/images/logo.gif border=0 width=143 height=59 alt="Ye Olde Mail" align=left vspace=10/></td>
 
     <td width=99% bgcolor=#ffffff valign=top>
       <table width=100% cellpadding=1>
@@ -414,7 +414,7 @@ function format(num) {
             <table width=100% align=center cellpadding=0 cellspacing=0 bgcolor=#C3D9FF style=margin-bottom:5>
               <tr>
                 <td class="bubble tl" align=left valign=top><img src=/mail/images/corner_tl.gif class=c alt="" /></td>
-                <td class=bubble rowspan=2 style="font-family:arial;text-align:left;font-weight:bold;padding:3 0"><b>Welcome to Gmail</b></td>
+                <td class=bubble rowspan=2 style="font-family:arial;text-align:left;font-weight:bold;padding:3 0"><b>Welcome to Ye Olde Mail</b></td>
                 <td class="bubble tr" align=right valign=top><img src=/mail/images/corner_tr.gif class=c alt="" /></td>
               </tr>
               <tr>
@@ -433,7 +433,7 @@ function format(num) {
 <table width=94% align=center cellpadding=5 cellspacing=1>
 
   <tr>
-    <td valign=top><b>A Google approach to email.</b>
+    <td valign=top><b>A classic approach to Gmail.</b>
     <td valign=top>&nbsp;
 
 
@@ -447,11 +447,11 @@ ancestor table) above the iframe -->
 
   <tr>
       <td width=75% valign=top>
-	    <p><font size=-1>Gmail is an experiment in a new kind of webmail, built on the idea that you should never have to delete mail and you should always be able to find the message you want. The key features are: </font></p>
+	    <p><font size=-1>Ye Olde Mail is a project in an old kind of webmail, built on the idea that you should never have to use bloated new web UI and you should always be able to find the message you want. The key features are: </font></p>
 	    <ul>
           <li>
             <p><font size=-1><b>Search, don't sort.</b><br>
-             Use Google search to <b>find the exact message</b> you want, no matter when it was sent or received.</font></p>
+             Use Ye Olde Mail search to <b>find the exact message</b> you want, no matter when it was sent or received.</font></p>
           </li>
         </ul>
         <ul>
@@ -487,7 +487,7 @@ updateQuota();
           <tr bgcolor=#E8EEFA>
             <td valign=top style=text-align:center nowrap=nowrap>
               <div class=caption>
-              <font size="-1">Sign in to Gmail with your</font>
+              <font size="-1">Sign in to Ye Olde Mail with your</font>
               <center><table><tr>
               <td valign="top"><img src="google_transparent.gif" alt="Google"></td>
               <td valign="middle"><font size="+0"><b>Account</b></font></td>
@@ -563,7 +563,7 @@ FixForm();
                 using your mobile phone</a></b>
                 <br><br>
                 <font size="-1">
-                  <a href="http://mail.google.com/mail/help/about.html">About Gmail</a
+                  <a href="http://mail.google.com/mail/help/about.html">About Ye Olde Mail</a
                   >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://mail.google.com/mail/help/about_whatsnew.html">New features!</a>
                 </font>
                 <br>
@@ -580,7 +580,7 @@ FixForm();
     <td class="bubble tl" align=left valign=top><img src=/mail/images/corner_tl.gif class=c alt=""/></td>
     <td class=bubble rowspan=2 style=text-align:left>
     <div align=center>
-    <font size=-1 color=#666666>&copy;2005 Google - <a href=http://mail.google.com/mail/help/privacy.html>Privacy Policy</a> - <a href=http://mail.google.com/mail/help/program_policies.html>Program Policies</a> - <a href=http://mail.google.com/mail/help/terms_of_use.html>Terms of Use </a>
+    <font size=-1 color=#666666>From the Ye Olde Mail contributors. Gmail is &copy; Google. Google does not endorse and is not affiliated with this project. - <a href=http://mail.google.com/mail/help/privacy.html>Privacy Policy</a> - <a href=http://mail.google.com/mail/help/program_policies.html>Program Policies</a> - <a href=http://mail.google.com/mail/help/terms_of_use.html>Terms of Use </a>
     </font>
     </div>
     </td>
