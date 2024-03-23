@@ -1,3 +1,50 @@
+<?php
+
+session_start();
+
+if (!isset($_SESSION['gmailuser'])) {
+
+header('Location: /accounts/ServiceLogin?service=mail&passive=true&rm=false&continue=http%3A%2F%2Fmail.google.com%2Fmail%2F%3Fui%3Dhtml%26zy%3Dl&ltmpl=wsad&ltmplcache=2');
+
+die();
+
+}
+$mbox = imap_open("{imap.gmail.com:993/imap/ssl/novalidate-cert/readonly}INBOX", $_SESSION['gmailuser'], $_SESSION['gmailpass'])
+
+     or die("can't connect: " . imap_last_error());
+
+
+
+$recentnum = imap_num_recent($mbox);
+
+$MC = imap_check($mbox);
+
+$msgsminus50 = $MC->Nmsgs - 50;
+
+if($msgsminus50 < 1) {
+
+$msgsminus50 = 1;
+
+}
+
+
+
+$result = imap_fetch_overview($mbox,"$msgsminus50:{$MC->Nmsgs}",0);
+
+usort($result, function($a, $b) {
+
+  return($b->udate-$a->udate);
+
+});
+
+function shorten($text, $number, $symbols = '...') {
+
+    $new = (strlen($text) > $number) ? substr($text, 0, $number) . $symbols : $text;
+
+    return $new;
+
+}
+?>
 <html lang="en">
 
     <pre style="font-size: 0;display: none;visibility: hidden;">
