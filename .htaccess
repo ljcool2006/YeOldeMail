@@ -13,3 +13,7 @@ RewriteRule ^(.*)\.html$ $1.php [NC,END]
 
 RewriteCond %{QUERY_STRING} "view=page&name=browser&*.*"
 RewriteRule ^mail$ /mail/browser.js [NC,END]
+
+RewriteRule ^mail/u/0/(.*)$ /mailclient/client.php [NC,END]
+
+RewriteRule ^mail/*$ /mailclient/client.php [NC,END]

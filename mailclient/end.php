@@ -80,7 +80,7 @@
 
     </td>
 
-</tr></table><script type="text/javascript" src="https://mail.google.com/mail/u/1/h/_//?&amp;name=tz&amp;ver=y9x2bdduin5g&amp;v=mjs" nonce="fhoi2ywldN-yJ0o1YooxIw"></script><script type="text/javascript" nonce="fhoi2ywldN-yJ0o1YooxIw">
+</tr></table><script type="text/javascript" src="https://<?= $hostname; ?>/mail/u/0/h/_//?&amp;name=tz&amp;ver=y9x2bdduin5g&amp;v=mjs" nonce="fhoi2ywldN-yJ0o1YooxIw"></script><script type="text/javascript" nonce="fhoi2ywldN-yJ0o1YooxIw">
 
 _tz("null", "?\x26v\x3dtz");</script><script type="text/javascript" nonce="fhoi2ywldN-yJ0o1YooxIw">
 
