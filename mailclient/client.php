@@ -1,4 +1,5 @@
 <?php
+if(isset($_GET['v'])){
 switch ($_GET['v']) {
 	case "tz":
 	require "tz.php";
@@ -21,4 +22,7 @@ switch ($_GET['v']) {
 	default:
 	require "inbox.php";
 	break;
+}
+} else {
+require "inbox.php";
 }
