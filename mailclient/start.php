@@ -12,7 +12,7 @@ die();
 $mbox = imap_open("{imap.gmail.com:993/imap/ssl/novalidate-cert/readonly}INBOX", $_SESSION['gmailuser'], $_SESSION['gmailpass'])
 
      //or die("can't connect: " . imap_last_error());
-	 or require "../errors/temperror.html"; die();
+	 or require "../errors/temperror.php";
 
 
 
