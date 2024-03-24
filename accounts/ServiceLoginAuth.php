@@ -1,4 +1,5 @@
 <?php
+session_start();
 if ($_SERVER["REQUEST_METHOD"] == "POST" && !isset($_SESSION['gmailuser']) && $_POST["service"] == "mail") {
 
 if(empty(trim($_POST["Email"])) || empty(trim($_POST["Passwd"]))){

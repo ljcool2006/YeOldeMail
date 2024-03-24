@@ -5,7 +5,14 @@ switch ($_GET['v']) {
 	break;
 	case "ss":
 	header('Content-Type: text/css');
-	require "ss.css";
+	switch ($_GET['name']) {
+		case "c":
+		require "c.css";
+		break;
+		case "a":
+		require "a.css";
+		break;
+	}
 	break;
 	case "mjs":
 	header('Content-Type: text/javascript');

@@ -1,0 +1,17 @@
+/* These styles are hidden from Netscape 4.x */
+
+.m td, .l td{padding-left:6px}
+.th td, .th th{border-bottom:1px solid #bbb}
+.th .ts{height:1.3em;overflow:hidden;display:block}
+.th a:link, .th a:active, .th a:visited{text-decoration:none}
+.bn td{border:1px solid #FAD163}
+.ct textarea, .ct input, .ct select{font-family:arial,sans-serif;font-size:100%}
+.compose .mi{width:80ex;font-family:arial,sans-serif;font-size:100%}
+.compose .i, .search .i{width:99%;font-family:arial,sans-serif;font-size:100%}
+.qr textarea{width:80ex;font-family:arial,sans-serif;font-size:100%}
+.qr input{font-family:arial,sans-serif;font-size:100%}
+.thi {border:2px solid #c3d9ff;padding:5px}
+#ac-list {border:1px solid #666;background:#E5ECF9;font-size:100%;margin:0px;padding:2px 2px 2px 2px;z-index:10;color:#0000cc;}
+#ac-list div{margin:0px;cursor:pointer;white-space:nowrap;height:1.3em;width:260px;overflow:hidden;}
+#ac-list .selected{background:#C6D8FF;}
+#ac-list #selected{background:#C6D8FF;}
