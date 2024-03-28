@@ -11,29 +11,17 @@ require "start.php";
 
                 <td>
 
-                    <form action="?&amp;" name="f" method="POST"><input type="hidden" name="redir" value="?&amp;"><input type="hidden" name="at" value="AF6bupNSfilcK9AU9a1-7RlhxOKxXDeciA"><h2 class="hdn">Inbox</h2>
+                    <form action="?&amp;<? if(isset($_GET['s'])) { ?>s=<?= htmlspecialchars($_GET['s']); ?><? } ?>" name="f" method="POST"><input type="hidden" name="redir" value="?&amp;<? if(isset($_GET['s'])) { ?>s=<?= htmlspecialchars($_GET['s']); ?><? } ?>"><input type="hidden" name="at" value="AF6bupNSfilcK9AU9a1-7RlhxOKxXDeciA"><h2 class="hdn"><?= $gmailtitle; ?></h2>
 
                         <table width="100%" cellpadding="2" cellspacing="0" border="0" bgcolor="#C3D9FF">
 
                             <tr>
 
-                                <td><input type="submit" name="nvp_a_arch" value="Archive">&nbsp;&nbsp;<input type="submit" name="nvp_a_sp" value="Report Spam">&nbsp;&nbsp;<input type="submit" name="nvp_a_tr" value="Delete">&nbsp;&nbsp;<select name="tact">
-
-                                        <option value="">More Actions...</option>
-
-                                        <option value="rd">Mark as read</option>
-
-                                        <option value="ur">Mark as unread</option>
-
-                                        <option value="st">Add star</option>
-
-                                        <option value="xst">Remove star</option>
-
-                                        <option value="ig">Mute</option>
+                                <td><? require "actions.php"; ?>
 
                                     </select>&nbsp;<input type="submit" name="nvp_tbu_go" value="Go">&nbsp;
 
-                                    <a href="?&amp;" class="searchPageLink">Refresh</a>
+                                    <a href="?&amp;<? if(isset($_GET['s'])) { ?>s=<?= htmlspecialchars($_GET['s']); ?><? } ?>" class="searchPageLink">Refresh</a>
 
                                 </td>
 
@@ -117,23 +105,11 @@ foreach($result as $email) {
 
                             <tr>
 
-                                <td><input type="submit" name="nvp_a_arch" value="Archive">&nbsp;&nbsp;<input type="submit" name="nvp_a_sp" value="Report Spam">&nbsp;&nbsp;<input type="submit" name="nvp_a_tr" value="Delete">&nbsp;&nbsp;<select name="bact">
-
-                                        <option value="">More Actions...</option>
-
-                                        <option value="rd">Mark as read</option>
-
-                                        <option value="ur">Mark as unread</option>
-
-                                        <option value="st">Add star</option>
-
-                                        <option value="xst">Remove star</option>
-
-                                        <option value="ig">Mute</option>
+                                <td><? require "actions.php"; ?>
 
                                     </select>&nbsp;<input type="submit" name="nvp_bbu_go" value="Go">&nbsp;
 
-                                    <a href="?&amp;" class="searchPageLink">Refresh</a>
+                                    <a href="?&amp;<? if(isset($_GET['s'])) { ?>s=<?= htmlspecialchars($_GET['s']); ?><? } ?>" class="searchPageLink">Refresh</a>
 
                                 </td>
 

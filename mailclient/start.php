@@ -9,6 +9,23 @@ header('Location: /accounts/ServiceLogin?service=mail&passive=true&rm=false&cont
 die();
 
 }
+
+if(isset($_GET['s'])) {
+switch($_GET['s']) {
+	case "r":
+	$gmailtitle = "Starred";
+	$gmailmbox = "{imap.gmail.com:993/imap/ssl/novalidate-cert/readonly}[Gmail]/Starred";
+	break;
+	default:
+	$gmailtitle = "Inbox";
+	$gmailmbox = "{imap.gmail.com:993/imap/ssl/novalidate-cert/readonly}INBOX";
+	break;
+}
+} else {
+$gmailtitle = "Inbox";
+$gmailmbox = "{imap.gmail.com:993/imap/ssl/novalidate-cert/readonly}INBOX";
+}
+
 $mbox = imap_open("{imap.gmail.com:993/imap/ssl/novalidate-cert/readonly}INBOX", $_SESSION['gmailuser'], $_SESSION['gmailpass'])
 
      //or die("can't connect: " . imap_last_error());
@@ -63,7 +80,7 @@ function randomId() {
 
 </pre>
 
-    <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Gmail - Inbox</title><link rel="canonical" href="https://<?= $hostname; ?>/mail/"/><link rel="shortcut icon" href="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/gmail.ico" type="image/x-icon"><link rel="stylesheet" type="text/css" href="https://<?= $hostname; ?>/mail/u/0/h/_//?&amp;name=c&amp;ver=6wrl3yi4mm9e&amp;v=ss" nonce="boEx14cBlaMkkZGCxMW5kA"><style type="text/css" nonce="boEx14cBlaMkkZGCxMW5kA">
+    <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Gmail - <?= $gmailtitle; ?></title><link rel="canonical" href="https://<?= $hostname; ?>/mail/"/><link rel="shortcut icon" href="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/gmail.ico" type="image/x-icon"><link rel="stylesheet" type="text/css" href="https://<?= $hostname; ?>/mail/u/0/h/_//?&amp;name=c&amp;ver=6wrl3yi4mm9e&amp;v=ss" nonce="boEx14cBlaMkkZGCxMW5kA"><style type="text/css" nonce="boEx14cBlaMkkZGCxMW5kA">
 
             @import url("https://<?= $hostname; ?>/mail/u/0/h/_//?&name=a&ver=1sthyqjwgl8hj&v=ss");
 
@@ -351,9 +368,9 @@ function randomId() {
 
                             <td>
 
-                                <font size="1">&nbsp;<a href="?&amp;pv=tl&amp;v=as">Show&nbsp;search&nbsp;options</a>
+                                <font size="1">&nbsp;<a href="?&amp;pv=tl&amp;v=as<? if(isset($_GET['s'])) { ?>&amp;s=<?= htmlspecialchars($_GET['s']); ?><? } ?>">Show&nbsp;search&nbsp;options</a>
 
-                                </font><br><font size="1">&nbsp;<a href="?&amp;pv=tl&amp;v=caf">Create&nbsp;a&nbsp;filter</a>
+                                </font><br><font size="1">&nbsp;<a href="?&amp;pv=tl&amp;v=caf<? if(isset($_GET['s'])) { ?>&amp;s=<?= htmlspecialchars($_GET['s']); ?><? } ?>">Create&nbsp;a&nbsp;filter</a>
 
                                 </font>
 
@@ -427,7 +444,7 @@ function randomId() {
 
                     <b>
 
-                        <a href="?&amp;cs=b&amp;pv=tl&amp;v=b" accesskey="c">Compose&nbsp;Mail</a>
+                        <a href="?&amp;cs=b&amp;pv=tl&amp;v=b<? if(isset($_GET['s'])) { ?>&amp;s=<?= htmlspecialchars($_GET['s']); ?><? } ?>" accesskey="c">Compose&nbsp;Mail</a>
 
                     </b>
 
@@ -447,7 +464,7 @@ function randomId() {
 
             <tr>
 
-                <td bgcolor="#C3D9FF">
+                <td<? if(!isset($_GET['s'])) { ?> bgcolor="#C3D9FF"<? } ?>>
 
                     <h3>
 
@@ -465,11 +482,11 @@ function randomId() {
 
             <tr>
 
-                <td>
+                <td<? if(isset($_GET['s']) && $_GET['s'] == "r") { ?> bgcolor="#C3D9FF"><b<? } ?>>
 
                     <a href="?&amp;s=r">Starred&nbsp;<img src="https://ssl.gstatic.com/ui/v1/icons/mail/images/star_on_sm_2.gif" width="13" height="13" border="0" alt="star"/></a>
 
-                </td>
+                </<? if(isset($_GET['s']) && $_GET['s'] == "r") { ?>b></<? } ?>td>
 
             </tr>
 
