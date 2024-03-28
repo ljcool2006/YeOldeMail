@@ -124,13 +124,13 @@ function get_mime_type($structure)
                                                 <tr>
                                                    <td>
                                                       <a href="?&amp;at=AF6bupOkehXG3JxZKjgELVuO2tUY6OoM-Q&amp;redir=?%26th%3D<?= htmlspecialchars($_GET['th']); ?>%26v%3Dc&amp;m=<?= htmlspecialchars($_GET['th']); ?>&amp;a=st#m_<?= htmlspecialchars($_GET['th']); ?>"><img src="https://ssl.gstatic.com/ui/v1/icons/mail/images/star_off_sm_2.gif" width="13" height="13" border="0" alt="Add star"></a>&nbsp; 
-                                                      <h3><font color="#00681C"><b><?= @htmlspecialchars($msgfrom->personal); ?></b></font></h3>
-                                                      &lt;<?= htmlspecialchars($msgfrom->mailbox); ?>@<?= htmlspecialchars($msgfrom->host); ?>&gt;
+                                                      <h3><font color="#00681C"><b><?= @htmlspecialchars($msgfrom[0]->personal); ?></b></font></h3>
+                                                      &lt;<?= htmlspecialchars($msgfrom[0]->mailbox); ?>@<?= htmlspecialchars($msgfrom[0]->host); ?>&gt;
                                                    </td>
                                                    <td align="right" valign="top">Sun, Jan 28, 2024 at 2:34 PM</td>
                                                 </tr>
                                                 <tr>
-                                                   <td colspan="2">To: <?= @htmlspecialchars($msgto->personal); ?> &lt;<?= htmlspecialchars($msgto->mailbox); ?>@<?= htmlspecialchars($msgto->host); ?>&gt;</td>
+                                                   <td colspan="2">To: <?= @htmlspecialchars($msgto[0]->personal); ?> &lt;<?= htmlspecialchars($msgto[0]->mailbox); ?>@<?= htmlspecialchars($msgto[0]->host); ?>&gt;</td>
                                                 </tr>
                                                 <tr>
                                                    <td colspan="2">
