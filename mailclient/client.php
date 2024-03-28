@@ -19,6 +19,9 @@ switch ($_GET['v']) {
 	header('Content-Type: text/javascript');
 	require "mjs.js";
 	break;
+	case "c":
+	require "c.php";
+	break;
 	default:
 	require "inbox.php";
 	break;
