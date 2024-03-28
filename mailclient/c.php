@@ -5,9 +5,9 @@ require "start.php";
 //$msgtitle = htmlspecialchars($msgheader->subject);
 $msgfrom = $msgheader->from;
 $msgto = $msgheader->to;
-$msgcc = $msgheader->cc;
-$msgbcc = $msgheader->bcc;
-$msgreplyto = $msgheader->reply-to;
+//$msgcc = $msgheader->cc;
+//$msgbcc = $msgheader->bcc;
+//$msgreplyto = $msgheader->reply-to;
 
 //https://stackoverflow.com/a/25507756
 function getBody($uid, $imap)
