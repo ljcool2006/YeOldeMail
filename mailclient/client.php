@@ -22,6 +22,9 @@ switch ($_GET['v']) {
 	case "c":
 	require "c.php";
 	break;
+	case "om":
+	require "om.php";
+	break;
 	default:
 	require "inbox.php";
 	break;
