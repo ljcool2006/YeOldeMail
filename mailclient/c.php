@@ -1,5 +1,65 @@
 <?php
 require "start.php";
+
+//https://stackoverflow.com/a/25507756
+function getBody($uid, $imap)
+{
+    $body = $this->get_part($imap, $uid, "TEXT/HTML");
+    // if HTML body is empty, try getting text body
+    if ($body == "") {
+        $body = $this->get_part($imap, $uid, "TEXT/PLAIN");
+    }
+    return $body;
+}
+
+function get_part($imap, $uid, $mimetype, $structure = false, $partNumber = false)
+{
+    if (!$structure) {
+        $structure = imap_fetchstructure($imap, $uid, FT_UID);
+    }
+    if ($structure) {
+        if ($mimetype == $this->get_mime_type($structure)) {
+            if (!$partNumber) {
+                $partNumber = 1;
+            }
+            $text = imap_fetchbody($imap, $uid, $partNumber, FT_UID);
+            switch ($structure->encoding) {
+                case 3:
+                    return imap_base64($text);
+                case 4:
+                    return imap_qprint($text);
+                default:
+                    return $text;
+            }
+        }
+
+        // multipart
+        if ($structure->type == 1) {
+            foreach ($structure->parts as $index => $subStruct) {
+                $prefix = "";
+                if ($partNumber) {
+                    $prefix = $partNumber . ".";
+                }
+                $data = $this->get_part($imap, $uid, $mimetype, $subStruct, $prefix . ($index + 1));
+                if ($data) {
+                    return $data;
+                }
+            }
+        }
+    }
+    return false;
+}
+
+function get_mime_type($structure)
+{
+    $primaryMimetype = ["TEXT", "MULTIPART", "MESSAGE", "APPLICATION", "AUDIO", "IMAGE", "VIDEO", "OTHER"];
+
+    if ($structure->subtype) {
+        return $primaryMimetype[(int)$structure->type] . "/" . $structure->subtype;
+    }
+    return "TEXT/PLAIN";
+}
+
 ?>
                <td valign="top">
                   <table width="100%" cellpadding="0" cellspacing="0" border="0">
@@ -73,12 +133,15 @@ require "start.php";
                                                    <td colspan="2">
                                                       <div class="msg">
 <?
+/*
 if(empty(imap_fetchbody($mbox,htmlspecialchars($_GET['th']),1.2,FT_UID))) {
 	echo imap_fetchbody($mbox,htmlspecialchars($_GET['th']),1.1,FT_UID);
 } else {
 	echo imap_fetchbody($mbox,htmlspecialchars($_GET['th']),1.2,FT_UID);
 }
+*/
 //echo imap_body($mbox,htmlspecialchars($_GET['th']), FT_UID);
+echo getBody(htmlspecialchars($_GET['th']),$mbox);
 ?>
                                                       </div>
                                                    </td>
