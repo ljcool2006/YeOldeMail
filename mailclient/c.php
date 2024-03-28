@@ -4,10 +4,10 @@ require "start.php";
 //https://stackoverflow.com/a/25507756
 function getBody($uid, $imap)
 {
-    $body = $this->get_part($imap, $uid, "TEXT/HTML");
+    $body = get_part($imap, $uid, "TEXT/HTML");
     // if HTML body is empty, try getting text body
     if ($body == "") {
-        $body = $this->get_part($imap, $uid, "TEXT/PLAIN");
+        $body = get_part($imap, $uid, "TEXT/PLAIN");
     }
     return $body;
 }
@@ -18,7 +18,7 @@ function get_part($imap, $uid, $mimetype, $structure = false, $partNumber = fals
         $structure = imap_fetchstructure($imap, $uid, FT_UID);
     }
     if ($structure) {
-        if ($mimetype == $this->get_mime_type($structure)) {
+        if ($mimetype == get_mime_type($structure)) {
             if (!$partNumber) {
                 $partNumber = 1;
             }
@@ -40,7 +40,7 @@ function get_part($imap, $uid, $mimetype, $structure = false, $partNumber = fals
                 if ($partNumber) {
                     $prefix = $partNumber . ".";
                 }
-                $data = $this->get_part($imap, $uid, $mimetype, $subStruct, $prefix . ($index + 1));
+                $data = get_part($imap, $uid, $mimetype, $subStruct, $prefix . ($index + 1));
                 if ($data) {
                     return $data;
                 }
