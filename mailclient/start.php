@@ -15,15 +15,18 @@ switch($_GET['s']) {
 	case "r":
 	$gmailtitle = "Starred";
 	$gmailmbox = "{imap.gmail.com:993/imap/ssl/novalidate-cert/readonly}[Gmail]/Starred";
+	$currentfolder = "r";
 	break;
 	default:
 	$gmailtitle = "Inbox";
 	$gmailmbox = "{imap.gmail.com:993/imap/ssl/novalidate-cert/readonly}INBOX";
+	$currentfolder = "";
 	break;
 }
 } else {
 $gmailtitle = "Inbox";
 $gmailmbox = "{imap.gmail.com:993/imap/ssl/novalidate-cert/readonly}INBOX";
+$currentfolder = "";
 }
 
 $mbox = imap_open($gmailmbox, $_SESSION['gmailuser'], $_SESSION['gmailpass'])
