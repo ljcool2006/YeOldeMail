@@ -105,7 +105,7 @@ foreach($result as $email) {
 
                             <tr>
 
-                                <td><? require "actions.php"; ?>
+                                <td><? require "actionsbottom.php"; ?>
 
                                     </select>&nbsp;<input type="submit" name="nvp_bbu_go" value="Go">&nbsp;
 
@@ -144,6 +144,4 @@ foreach($result as $email) {
     </td>
 <?
 require "end.php";
-imap_close($mbox);
-imap_close($mboxunread);
 ?>

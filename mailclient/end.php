@@ -85,3 +85,8 @@
 _tz("null", "?\x26v\x3dtz");</script><script type="text/javascript" nonce="fhoi2ywldN-yJ0o1YooxIw">
 
 'name\x3d"at" value\x3d0\x26name\x3dat value\x3d0\x26at\x3d0\x26amp;at\x3d0\x26';</script></table></body></html>
+
+<?
+imap_close($mbox);
+imap_close($mboxunread);
+?>

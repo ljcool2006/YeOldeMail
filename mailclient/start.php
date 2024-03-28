@@ -374,7 +374,7 @@ function randomId() {
 
                             <td>
 
-                                <font size="1">&nbsp;<a href="?&amp;pv=tl&amp;v=as<? if(isset($_GET['s'])) { ?>&amp;s=<?= htmlspecialchars($_GET['s']); ?><? } ?>">Show&nbsp;search&nbsp;options</a>
+                                <font size="1">&nbsp;<a href="?&amp;pv=<? if(isset($_GET['th'])) { ?>cv<? } else { ?>tl<? } ?><? if(isset($_GET['th'])) { ?>&amp;th=<?= htmlspecialchars($_GET['th']); ?><? } ?>&amp;v=as<? if(isset($_GET['s'])) { ?>&amp;s=<?= htmlspecialchars($_GET['s']); ?><? } ?>">Show&nbsp;search&nbsp;options</a>
 
                                 </font><br><font size="1">&nbsp;<a href="?&amp;pv=tl&amp;v=caf<? if(isset($_GET['s'])) { ?>&amp;s=<?= htmlspecialchars($_GET['s']); ?><? } ?>">Create&nbsp;a&nbsp;filter</a>
 
@@ -450,7 +450,7 @@ function randomId() {
 
                     <b>
 
-                        <a href="?&amp;cs=b&amp;pv=tl&amp;v=b<? if(isset($_GET['s'])) { ?>&amp;s=<?= htmlspecialchars($_GET['s']); ?><? } ?>" accesskey="c">Compose&nbsp;Mail</a>
+                        <a href="?&amp;<? if(isset($_GET['th'])) { ?>pv=cv&amp;th=<?= htmlspecialchars($_GET['th']); ?>&amp;cs=b<? } else { ?>cs=b&amp;pv=tl<? } ?>&amp;v=b<? if(isset($_GET['s'])) { ?>&amp;s=<?= htmlspecialchars($_GET['s']); ?><? } ?>" accesskey="c">Compose&nbsp;Mail</a>
 
                     </b>
 
