@@ -144,6 +144,7 @@ if(empty(imap_fetchbody($mbox,htmlspecialchars($_GET['th']),1.2,FT_UID))) {
 //echo getBody(htmlspecialchars($_GET['th']),$mbox);
 //echo '<iframe sandbox style="border:none;width:100%;height:100%;" src="https://' . $hostname . '/mailclient/ciframe.php?th='.htmlspecialchars($_GET['th']).'&s=' . $currentfolder . '"></iframe>';
 $htmlbody = getBody(htmlspecialchars($_GET['th']),$mbox);
+//https://stackoverflow.com/a/20082963
 // create a new DomDocument object
 $doc = new DOMDocument();
 
