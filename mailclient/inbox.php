@@ -57,7 +57,7 @@ foreach($result as $email) {
 
                             <tr bgcolor="#<? if($email->seen == 1) { ?>E8EEF7<? } else { ?>ffffff<? } ?>">
 
-                                <td<? if($somenum == 1) { ?> width="1%" nowrap<? } ?>><input type="checkbox" name="t" value="<? echo $email->uid; ?>"><? if($somenum == 1) { ?><img src="https://ssl.gstatic.com/ui/v1/icons/mail/images/cleardot.gif" width="15" height="15" border="0" alt=""><? } ?></td>
+                                <td<? if($somenum == 1) { ?> width="1%" nowrap<? } ?>><input type="checkbox" name="t" value="<? echo $email->uid; ?>"><? if($somenum == 1) { ?><img src="https://ssl.gstatic.com/ui/v1/icons/mail/images/<? if(isset($_GET['s']) && $_GET['s'] == "r") { ?>star_on_2<? } else { ?>cleardot<? } ?>.gif" width="15" height="15" border="0" alt="<? if(isset($_GET['s']) && $_GET['s'] == "r") { ?>Starred<? } ?>"><? } ?></td>
 
                                 <td<? if($somenum == 1) { ?> width="25%"<? } ?>>
 
@@ -67,7 +67,7 @@ foreach($result as $email) {
 
                                 <td<? if($somenum == 1) { ?> width="73%"<? } ?>>
 
-                                    <a href="?&amp;th=<? echo $email->uid; ?>&amp;v=c">
+                                    <a href="?&amp;th=<? echo $email->uid; ?>&amp;v=c<? if(isset($_GET['s'])) { ?>&amp;s=<?= htmlspecialchars($_GET['s']); ?><? } ?>">
 
                                         <span class="ts">
 
