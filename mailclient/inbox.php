@@ -145,4 +145,5 @@ foreach($result as $email) {
 <?
 require "end.php";
 imap_close($mbox);
+imap_close($mboxunread);
 ?>

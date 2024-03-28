@@ -31,9 +31,15 @@ $mbox = imap_open($gmailmbox, $_SESSION['gmailuser'], $_SESSION['gmailpass'])
      //or die("can't connect: " . imap_last_error());
 	 or require "../errors/temperror.php";
 
+$mboxunread = imap_open("{imap.gmail.com:993/imap/ssl/novalidate-cert/readonly}", $_SESSION['gmailuser'], $_SESSION['gmailpass'])
+
+     //or die("can't connect: " . imap_last_error());
+	 or require "../errors/temperror.php";
 
 
-$recentnum = imap_num_recent($mbox);
+//$recentnum = imap_num_recent($mbox);
+$recentnum = imap_status($mboxunread, "{imap.gmail.com:993/imap/ssl/novalidate-cert/readonly}INBOX", SA_ALL);
+$recentnum = $recentnum->unseen;
 
 $MC = imap_check($mbox);
 
