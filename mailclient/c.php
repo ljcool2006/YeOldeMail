@@ -142,7 +142,26 @@ if(empty(imap_fetchbody($mbox,htmlspecialchars($_GET['th']),1.2,FT_UID))) {
 */
 //echo imap_body($mbox,htmlspecialchars($_GET['th']), FT_UID);
 //echo getBody(htmlspecialchars($_GET['th']),$mbox);
-echo '<iframe sandbox style="border:none;width:100%;height:100%;" src="https://' . $hostname . '/mailclient/ciframe.php?th='.htmlspecialchars($_GET['th']).'&s=' . $currentfolder . '"></iframe>';
+//echo '<iframe sandbox style="border:none;width:100%;height:100%;" src="https://' . $hostname . '/mailclient/ciframe.php?th='.htmlspecialchars($_GET['th']).'&s=' . $currentfolder . '"></iframe>';
+$htmlbody = getBody(htmlspecialchars($_GET['th']),$mbox);
+$d = new DOMDocument();
+@$d->loadHTML($htmlbody);
+$xpath = new DOMXPath($d);
+$linkresult = $xpath->query("//link");
+
+foreach ($linkresult as $link)
+{
+    $rel = $link->getattribute("rel");
+
+    if ($rel=="stylesheet")
+    {
+          $link->parentNode->removeChild($link);
+    }
+
+}
+
+$linkoutput= $d->saveHTML();
+echo $linkoutput;
 ?>
                                                       </div>
                                                    </td>
