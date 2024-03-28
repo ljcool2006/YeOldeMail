@@ -144,24 +144,26 @@ if(empty(imap_fetchbody($mbox,htmlspecialchars($_GET['th']),1.2,FT_UID))) {
 //echo getBody(htmlspecialchars($_GET['th']),$mbox);
 //echo '<iframe sandbox style="border:none;width:100%;height:100%;" src="https://' . $hostname . '/mailclient/ciframe.php?th='.htmlspecialchars($_GET['th']).'&s=' . $currentfolder . '"></iframe>';
 $htmlbody = getBody(htmlspecialchars($_GET['th']),$mbox);
-$d = new DOMDocument();
-@$d->loadHTML($htmlbody);
-$xpath = new DOMXPath($d);
-$linkresult = $xpath->query("//link");
+// create a new DomDocument object
+$doc = new DOMDocument();
 
-foreach ($linkresult as $link)
-{
-    $rel = $link->getattribute("rel");
+// load the HTML into the DomDocument object (this would be your source HTML)
+$doc->loadHTML($htmlbody);
 
-    if ($rel=="stylesheet")
-    {
-          $link->parentNode->removeChild($link);
-    }
+removeElementsByTagName('script', $doc);
+removeElementsByTagName('style', $doc);
+removeElementsByTagName('link', $doc);
 
+// output cleaned html
+echo $doc->saveHtml();
+
+function removeElementsByTagName($tagName, $document) {
+  $nodeList = $document->getElementsByTagName($tagName);
+  for ($nodeIdx = $nodeList->length; --$nodeIdx >= 0; ) {
+    $node = $nodeList->item($nodeIdx);
+    $node->parentNode->removeChild($node);
+  }
 }
-
-$linkoutput= $d->saveHTML();
-echo $linkoutput;
 ?>
                                                       </div>
                                                    </td>
