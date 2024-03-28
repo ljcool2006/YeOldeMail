@@ -79,6 +79,11 @@ function randomId() {
     return $randomid;
 
 }
+if(isset($_GET['v']) && $_GET['v'] == "c"){
+$msgheader = imap_rfc822_parse_headers(imap_fetchheader($mbox, htmlspecialchars($_GET['th']), FT_UID));
+$msgtitle = htmlspecialchars($msgheader->subject);
+$gmailtitle = $msgtitle;
+}
 ?>
 <html lang="en">
 

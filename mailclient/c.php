@@ -1,6 +1,14 @@
 <?php
 require "start.php";
 
+//$msgheader = imap_rfc822_parse_headers(imap_fetchheader($mbox, htmlspecialchars($_GET['th']), FT_UID));
+//$msgtitle = htmlspecialchars($msgheader->subject);
+$msgfrom = $msgheader->from;
+$msgto = $msgheader->to;
+$msgcc = $msgheader->cc;
+$msgbcc = $msgheader->bcc;
+$msgreplyto = $msgheader->reply-to;
+
 //https://stackoverflow.com/a/25507756
 function getBody($uid, $imap)
 {
@@ -100,7 +108,7 @@ function get_mime_type($structure)
                                  <tbody>
                                     <tr>
                                        <td>
-                                          <h2><font size="+1"><b>New comment on "Doom - new prototype footage!"</b></font></h2>
+                                          <h2><font size="+1"><b><?= $msgtitle; ?></b></font></h2>
                                           &nbsp;&nbsp; <a href="?&amp;"><font size="1" color="#006633">Inbox</font></a>&nbsp; 
                                        </td>
                                     </tr>
