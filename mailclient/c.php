@@ -73,10 +73,10 @@ require "start.php";
                                                    <td colspan="2">
                                                       <div class="msg">
 <?
-if(empty(imap_fetchbody($mbox,htmlspecialchars($_GET['th']),2,FT_UID))) {
-	echo imap_fetchbody($mbox,htmlspecialchars($_GET['th']),1,FT_UID);
+if(empty(imap_fetchbody($mbox,htmlspecialchars($_GET['th']),1.2,FT_UID))) {
+	echo imap_fetchbody($mbox,htmlspecialchars($_GET['th']),1.1,FT_UID);
 } else {
-	echo imap_fetchbody($mbox,htmlspecialchars($_GET['th']),2,FT_UID);
+	echo imap_fetchbody($mbox,htmlspecialchars($_GET['th']),1.2,FT_UID);
 }
 //echo imap_body($mbox,htmlspecialchars($_GET['th']), FT_UID);
 ?>
