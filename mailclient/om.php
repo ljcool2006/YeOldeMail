@@ -3,6 +3,7 @@ require "start.php";
 ob_clean();
 $hText = imap_fetchbody($mbox, htmlspecialchars($_GET['th']), '0', FT_UID);
 $headers = imap_rfc822_parse_headers($hText);
+$ogmsg = imap_fetchbody($mbox, htmlspecialchars($_GET['th']), '', FT_UID);
 ?>
 <html><head><title>Original Message</title><link rel="shortcut icon" href="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/gmail.ico" type="image/x-icon"></head><body><div class="page-wrapper"><div class="top-area"><h3 class="page_title">Original Message</h3><div id="butterbar-container"><div id='butterbar-wrap'></div></div><table><tr><th>Message ID</th><td class="message_id"><?= htmlspecialchars($headers->message_id); ?></td></tr><tr><th>Created at:</th><td>Sat, Oct 28, 2023 at 3:08 AM (Delivered after 1 second)</td></tr><tr><th>From:</th><td><?= htmlspecialchars($headers->fromaddress); ?> Using {X-Mailer placeholder}</td></tr><tr><th>To:</th><td class="toRecipientsSelector"><?= htmlspecialchars($headers->toaddress); ?></td></tr><tr><th>Subject:</th><td><?= htmlspecialchars($headers->subject); ?></td></tr><tr><th>SPF:</th><td><span class="authresult">PASS</span> with IP {ip placeholder} <a href="https://support.google.com/a?p=show_original&hl=en" target="_blank" class="learn-more-link">Learn more</a></td></tr><tr><th>DKIM:</th><td><span class="authresult">&#39;PASS&#39;</span> with domain {domain placeholder} <a href="https://support.google.com/a?p=show_original&hl=en" target="_blank" class="learn-more-link">Learn more</a></td></tr><tr><th>DMARC:</th><td><span class="authresult">&#39;PASS&#39;</span> <a href="https://support.google.com/a?p=show_original&hl=en" target="_blank" class="learn-more-link">Learn more</a></td></tr></table><style type="text/css" nonce="ElR0qAqth3YL6YnzxsbY4g">
 
@@ -74,7 +75,7 @@ D.g++;D.g--}finally{(b=this.h)&&b.parentNode&&b.parentNode.removeChild(b),this.H
 
 "click",c);b=Qa(a);c=p(a.I,a);Pa(b,a.j,"keypress",c)}})}).call(this);
 
-</script><div id="bottom-area" class="bottom-area"><div class="raw_message"><pre class="raw_message_text" id="raw_message_text"><?= htmlspecialchars($hText); ?></pre></div></div></div></body></html>
+</script><div id="bottom-area" class="bottom-area"><div class="raw_message"><pre class="raw_message_text" id="raw_message_text"><?= htmlspecialchars($ogmsg); ?></pre></div></div></div></body></html>
 <?
 imap_close($mbox);
 imap_close($mboxunread);
