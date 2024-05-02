@@ -1,4 +1,48 @@
 <?php
+ini_set('display_errors', 0); ini_set('display_startup_errors', 0);
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+require '../vendor/autoload.php';
+if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['nvp_bu_send'])) {
+session_start();
+if (!empty($_FILES['file0']['tmp_name']) && !is_uploaded_file($_FILES['file0']['tmp_name'])) {
+die("my god, what are you doing?");
+}
+$mail = new PHPMailer(true);
+
+try {
+    $mail->SMTPDebug = SMTP::DEBUG_OFF;
+    $mail->isSMTP();
+    $mail->Host       = 'smtp.gmail.com';
+    $mail->SMTPAuth   = true;
+    $mail->Username   = $_SESSION['gmailuser'];
+    $mail->Password   = $_SESSION['gmailpass'];
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+    $mail->Port       = 465;
+
+    $mail->addAddress($_POST['to']);
+	if(!empty($_POST['cc'])){
+    $mail->addCC($_POST['cc']);
+	}
+	if(!empty($_POST['bcc'])){
+    $mail->addBCC($_POST['bcc']);
+	}
+
+	if(!empty($_FILES['file0']['tmp_name'])){
+    $mail->addAttachment($_FILES['file0']['tmp_name'], strip_tags($_FILES['file0']['name']));
+	}
+
+    $mail->isHTML(false);
+    $mail->Subject = $_POST['subject'];
+    $mail->Body    = $_POST['body'];
+
+    $mail->send();
+    header("Location: ?&");
+} catch (Exception $e) {
+    echo "Message could not be sent.";
+}
+} else {
 require "start.php";
 ?>
             <td valign=top>
@@ -16,8 +60,7 @@ require "start.php";
                            <table width=100% cellpadding=2 cellspacing=0 border=0 class=compose>
                               <tr>
                                  <td width=1% align=right valign=top nowrap><b id=l-to>To:</b></td>
-                                 <td><textarea name=to id=to rows=3 cols=55 wrap=virtual class=i autocomplete=off aria-labelledby=l-to>
-                                    </textarea>
+                                 <td><textarea name=to id=to rows=3 cols=55 wrap=virtual class=i autocomplete=off aria-labelledby=l-to></textarea>
                               <tr>
                                  <td align=right nowrap><b id=l-cc>Cc:</b></td>
                                  <td><input name=cc id=cc value="" type=text size=40 class=i autocomplete=off aria-labelledby=l-cc>
@@ -38,8 +81,7 @@ require "start.php";
                                  <td><input type=submit name=nvp_bu_amf value="Attach More Files">
                               <tr>
                                  <td>&nbsp;</td>
-                                 <td><textarea name=body title="Message Body" rows=15 cols=50 wrap=virtual class=mi aria-label="Message Body">
-                                    </textarea>
+                                 <td><textarea name=body title="Message Body" rows=15 cols=50 wrap=virtual class=mi aria-label="Message Body"></textarea>
                            </table>
                            <table width=100% cellpadding=2 cellspacing=0 border=0 bgcolor="#C3D9FF">
                               <tr>
@@ -47,4 +89,5 @@ require "start.php";
                            </table>
 <?php
 require "end.php";
+}
 ?>
