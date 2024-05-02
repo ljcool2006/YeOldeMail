@@ -1,4 +1,4 @@
-</tr></table><table cellpadding="2" cellspacing="0" border="0" align="center" class="ft">
+</tr><? if(isset($_GET['v']) && $_GET['v'] == "b") { ?></form><? } ?></table><table cellpadding="2" cellspacing="0" border="0" align="center" class="ft">
 
 <tr>
 
@@ -84,7 +84,13 @@
 
 _tz("null", "?\x26v\x3dtz");</script><script type="text/javascript" nonce="fhoi2ywldN-yJ0o1YooxIw">
 
-'name\x3d"at" value\x3d0\x26name\x3dat value\x3d0\x26at\x3d0\x26amp;at\x3d0\x26';</script></table></body></html>
+'name\x3d"at" value\x3d0\x26name\x3dat value\x3d0\x26at\x3d0\x26amp;at\x3d0\x26';</script></table>
+<? if(isset($_GET['v']) && $_GET['v'] == "b") { ?>
+<script type="text/javascript" src="https://<?= $hostname; ?>/mail/u/0/h/_//?&amp;name=ac&amp;ver=1u2en48ga1uxm&amp;v=mjs" ></script><script type="text/javascript" >
+   function onForm(){bp=true}var bp=false;var old="";document.f.to.focus();_ac_init("?\x26v\x3dsugr");old=document.f.body.value;for(var i=0,btn;btn=document.f.nvp_bu_send[i];i++)btn.onclick=onForm;for(var i=0,btn;btn=document.f.nvp_bu_sd[i];i++)btn.onclick=onForm;document.f.nvp_bu_amf.onclick=onForm;window.onbeforeunload=function(){if(!bp&&document.f.body.value!=old)return"Your draft has not been saved or sent."};
+</script>
+<? } ?>
+</body></html>
 
 <?
 imap_close($mbox);

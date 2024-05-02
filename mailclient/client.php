@@ -17,13 +17,23 @@ switch ($_GET['v']) {
 	break;
 	case "mjs":
 	header('Content-Type: text/javascript');
-	require "mjs.js";
+	switch ($_GET['name']) {
+		case "tz":
+		require "tz.js";
+		break;
+		case "ac":
+		require "ac.js";
+		break;
+	}
 	break;
 	case "c":
 	require "c.php";
 	break;
 	case "om":
 	require "om.php";
+	break;
+	case "b":
+	require "b.php";
 	break;
 	default:
 	require "inbox.php";

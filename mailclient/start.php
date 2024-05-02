@@ -455,7 +455,7 @@ $gmailtitle = $msgtitle;
 
             <tr>
 
-                <td>
+                <td<? if(isset($_GET['v']) && $_GET['v'] == "b") { ?> bgcolor="#C3D9FF"<? } ?>>
 
                     <b>
 
