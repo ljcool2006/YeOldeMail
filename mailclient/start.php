@@ -84,6 +84,12 @@ $msgheader = imap_rfc822_parse_headers(imap_fetchheader($mbox, htmlspecialchars(
 $msgtitle = htmlspecialchars($msgheader->subject);
 $gmailtitle = $msgtitle;
 }
+
+if(isset($_GET['v']) && $_GET['v'] == "b"){
+$is_compose = true;
+} else {
+$is_compose = false;
+}
 ?>
 <html lang="en">
 
@@ -479,7 +485,7 @@ $gmailtitle = $msgtitle;
 
             <tr>
 
-                <td<? if(!isset($_GET['s'])) { ?> bgcolor="#C3D9FF"<? } ?>>
+                <td<? if(!isset($_GET['s']) && $is_compose == false) { ?> bgcolor="#C3D9FF"<? } ?>>
 
                     <h3>
 
