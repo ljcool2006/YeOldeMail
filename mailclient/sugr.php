@@ -4,4 +4,4 @@ header('Content-Type: text/javascript; charset=UTF-8');
 $term = $_GET['scq'];
 ?>
 )]}'
-["<?= htmlspecialchars($term) ?>",[],{"q":""}]
+["<?= htmlspecialchars($term) ?>",[],{"q":"57FkYi99ISZ9cfSn1C5nhgHlLDY"}]
