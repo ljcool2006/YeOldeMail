@@ -4,3 +4,6 @@ This project aims to restore the now-defunct basic HTML Gmail client.
 * PHP 8.2.x
 * PHP IMAP extension
 * Composer
+## Credits
+* Google - the company responsible for Gmail
+* IdioticSniper, 0penrc - helped archive basic HTML Gmail before its doomsday
