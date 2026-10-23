@@ -157,7 +157,7 @@ $htmlbody = getBody(htmlspecialchars($_GET['th']),$mbox);
 $doc = new DOMDocument();
 
 // load the HTML into the DomDocument object (this would be your source HTML)
-$doc->loadHTML($htmlbody);
+$doc->loadHTML($htmlbody, LIBXML_NOERROR);
 
 removeElementsByTagName('script', $doc);
 removeElementsByTagName('style', $doc);
